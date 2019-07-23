@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Mileage of a Vehicle</title>
+<script>
+/* Defining Table
+* Input: Beginning and ending odometer readings and gallons of gasoline used
+* Processing: Compute mileage per gallon of gasoline
+* Output: Miles per Gallon (MPG)
+*/
+function computeMileage() {
+// Read the user input for beginning odometer
+var text1 = document.getElementById("odometerBegin").value;
+
+// Read the user input for ending odometer
+var text2 = document.getElementById("odometerEnd").value;
+
+// Read the user input for gallons of fuel
+var text3 = document.getElementById("gallonsUsed").value;
+
+// Convert what the user typed from text into a number
+var b = parseFloat(text1);
+
+// Convert what the user typed from text into a number
+var e = parseFloat(text2);
+
+// Convert what the user typed from text into a number
+var g = parseFloat(text3);
+
+// Compute miles traveled
+var m = e - b;
+
+// Compute miles traveled per gallon of gasoline
+var mpg = m / g;
+
+// Display the converted volume in Liters to the user.
+document.getElementById('result').innerHTML = mpg;
+}
+</script>
+</head>
+
+<body>
+Enter the beginning odometer reading: <input type="text" id="odometerBegin"><br>
+Enter the ending odometer reading: <input type="text" id="odometerEnd"><br>
+Enter the gallons of gasoline used: <input type="text" id="gallonsUsed"><br>
+<button type="button" onclick="computeMileage()">Compute</button>
+<div id="result"></div>
+</body>
+
+</html>
