@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Test Your Math Skills!</title>
+<script>
+/* Input: Child's equation
+* Processing: Calculate child's equation and compare with child's solution.
+* Output: User confirmation on accurate for inaccurate solution
+*/
+function calculateMath() {
+var firstNumber = parseFloat(document.getElementById('firstNumber').value);
+var symbol = document.getElementById('symbol').value;
+var secondNumber = parseFloat(document.getElementById('secondNumber').value);
+var inputSolution = parseFloat(document.getElementById('solution').value);
+var realSolution;
+var response;
+
+// Calculate problem
+if (symbol == "+") {
+var realSolution = firstNumber + secondNumber;
+}
+if (symbol == "-") {
+var realSolution = firstNumber - secondNumber;
+}
+if (symbol == "*") {
+var realSolution = firstNumber * secondNumber;
+}
+if (symbol == "/") {
+var realSolution = firstNumber / secondNumber;
+}
+
+// Compare inputSolution to realSolution
+if (realSolution == inputSolution) {
+response = "Correct! Good job.";
+} else {
+response = "Incorrect. Try again!";
+}
+
+// Set output message
+document.getElementById('response').innerHTML = response;
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="firstNumber">
+<input type="text" id="symbol">
+<input type="text" id="secondNumber">
+=
+<input type="text" id="solution">
+<button type="button" onclick="calculateMath()">Check</button><br><br>
+<div id="response"></div>
+</body>
+</html>

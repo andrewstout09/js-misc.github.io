@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Weather and Shoes</title>
+<script>
+/* Input: weather type
+* Processing: Determine best shoes based upon user input.
+* Output:Output best shoes
+*/
+function checkFootWear() {
+var weather = document.getElementById('weatherInput').value;
+var footWear;
+
+// Evaluate weather to determine best foot wear
+if (weather == 'hot') {
+footWear = 'sandals';
+}
+else if (weather == 'rain') {
+footWear = 'galoshes';
+}
+else if (weather == 'snow') {
+footWear = 'boots';
+}
+else {
+footWear = 'shoes';
+}
+
+// Set output message
+document.getElementById('best').innerHTML = footWear;
+}
+</script>
+</head>
+
+<body>
+What type of weather? hot/rain/snow <input type="text" id="weatherInput"><br>
+<button type="button" onclick="checkFootWear()">Check Foot Wear</button><br>
+Best Foot Wear = <div id="best"></div>
+</body>
+</html>
